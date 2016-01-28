@@ -1,0 +1,60 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>ThresholdAlgorithm</groupId>
+	<artifactId>Threshold.Algorithm</artifactId>
+	<version>2.0</version>
+	<packaging>bundle</packaging>
+	<build>
+		<finalName>ThresholdAlgorithm</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<version>1.4.0</version>
+				<extensions>true</extensions>
+				<configuration>
+					<instructions>
+						<Bundle-SymbolicName>${project.groupId}.${project.artifactId}</Bundle-SymbolicName>
+						<Private-Package>fsi.algorithm.impl, fsi.algorithm.activator</Private-Package>
+						<Bundle-Activator>fsi.algorithm.activator.Activator</Bundle-Activator>
+						<Import-Package>org.osgi.framework, fsi.service</Import-Package>
+						<Bundle-Name>Threshold Algorithm Bundle</Bundle-Name>
+					</instructions>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<version>2.7</version>
+			</plugin>
+		</plugins>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+	</build>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.felix</groupId>
+			<artifactId>org.osgi.core</artifactId>
+			<version>1.4.0</version>
+		</dependency>
+		<dependency>
+			<groupId>AlgorithmService</groupId>
+			<artifactId>AlgorithmService</artifactId>
+			<version>1.1</version>
+		</dependency>
+	</dependencies>
+
+<!-- 	<distributionManagement> -->
+<!-- 		<repository> -->
+<!-- 			<id>central</id> -->
+<!-- 			<name>libs-release-local</name> -->
+<!-- 			<url>http://localhost:8081/artifactory/libs-release-local</url> -->
+<!-- 		</repository> -->
+<!-- 	</distributionManagement> -->
+</project>
