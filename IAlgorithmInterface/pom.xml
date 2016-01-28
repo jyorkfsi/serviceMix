@@ -42,11 +42,11 @@
 			<version>1.4.0</version>
 		</dependency>
 	</dependencies>
-<!-- 		<distributionManagement> -->
-<!-- 		<repository> -->
-<!-- 			<id>central</id> -->
-<!-- 			<name>libs-release-local</name> -->
-<!-- 			<url>http://localhost:8081/artifactory/libs-release</url> -->
-<!-- 		</repository> -->
-<!-- 	</distributionManagement> -->
+ 		<distributionManagement> 
+ 		<repository> 
+ 			<id>central</id> 
+ 			<name>libs-release-local</name> 
+ 			<url>http://localhost:8081/artifactory/libs-release-local</url> 
+ 		</repository> 
+ 	</distributionManagement> 
 </project>
