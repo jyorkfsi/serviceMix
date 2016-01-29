@@ -1,0 +1,93 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>AlgorithmHttpClientBundle</groupId>
+	<artifactId>AlgorithmHttpClient</artifactId>
+	<version>1.0</version>
+	<name>Algorithm Http Client</name>
+	<description>Http servlet for viewing updated Algorithm bundles.</description>
+	<packaging>bundle</packaging>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.felix</groupId>
+			<artifactId>org.osgi.core</artifactId>
+			<version>1.4.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.felix</groupId>
+			<artifactId>org.apache.felix.framework</artifactId>
+			<version>3.0.1</version>
+			<type>bundle</type>
+		</dependency>
+		<dependency>
+			<groupId>AlgorithmService</groupId>
+			<artifactId>AlgorithmService</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.felix</groupId>
+			<artifactId>org.apache.felix.http.bridge</artifactId>
+			<version>2.0.4</version>
+			<type>bundle</type>
+		</dependency>
+		<dependency>
+			<groupId>LoggerFSI</groupId>
+			<artifactId>LoggerFSI</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.felix</groupId>
+			<artifactId>javax.servlet</artifactId>
+			<version>1.0.0</version>
+			<type>bundle</type>
+		</dependency>
+	</dependencies>
+	<distributionManagement>
+		<repository>
+			<id>central</id>
+			<name>libs-release-local</name>
+			<url>http://localhost:8081/artifactory/libs-release-local</url>
+		</repository>
+	</distributionManagement>
+	<build>
+		<sourceDirectory>src/main/java</sourceDirectory>
+		<testSourceDirectory>src/test/java</testSourceDirectory>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<version>1.4.0</version>
+				<extensions>true</extensions>
+				<configuration>
+					<instructions>
+						<Bundle-SymbolicName>${project.groupId}.${project.artifactId}</Bundle-SymbolicName>
+						<Private-Package>fsi.httpServlet.impl, com.forwardslope.felixlogger</Private-Package>
+						<Bundle-Activator>fsi.httpServlet.impl.Activator</Bundle-Activator>
+						<Import-Package>org.osgi.framework, org.osgi.util.tracker,
+							fsi.service, javax.servlet, javax.servlet.http,
+							org.osgi.service.http, org.osgi.service.log</Import-Package>
+						<Bundle-Name>Algorithm Http Client</Bundle-Name>
+					</instructions>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+		</plugins>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+	</build>
+
+
+</project>
