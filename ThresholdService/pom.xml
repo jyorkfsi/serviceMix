@@ -46,15 +46,15 @@
 		<dependency>
 			<groupId>AlgorithmService</groupId>
 			<artifactId>AlgorithmService</artifactId>
-			<version>1.1</version>
+			<version>1.0</version>
 		</dependency>
 	</dependencies>
 
-<!-- 	<distributionManagement> -->
-<!-- 		<repository> -->
-<!-- 			<id>central</id> -->
-<!-- 			<name>libs-release-local</name> -->
-<!-- 			<url>http://localhost:8081/artifactory/libs-release-local</url> -->
-<!-- 		</repository> -->
-<!-- 	</distributionManagement> -->
+	<distributionManagement>
+		<repository>
+			<id>central</id>
+			<name>libs-release-local</name>
+			<url>http://localhost:8081/artifactory/libs-release-local</url>
+		</repository>
+	</distributionManagement>
 </project>
