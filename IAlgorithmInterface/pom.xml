@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>AlgorithmService</groupId>
 	<artifactId>AlgorithmService</artifactId>
-	<version>1.0</version>
+	<version>1.1</version>
 	<packaging>bundle</packaging>
 	<build>
 		<plugins>
