@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>ThresholdAlgorithm</groupId>
 	<artifactId>Threshold.Algorithm</artifactId>
-	<version>1.0</version>
+	<version>2.1</version>
 	<packaging>bundle</packaging>
 	<build>
 		<finalName>ThresholdAlgorithm</finalName>

@@ -8,7 +8,7 @@ public class ThresholdImpl implements IAlgorithmInterface{
 	
 	public ThresholdImpl() {
 	}
-	private Double threshold = 200.0;
+	private Double threshold = 350.0;
 	private PropertyRetriever props = new PropertyRetriever();
 	
 	public String getVersion() {
